@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_demo/all_confetti.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
@@ -21,23 +20,21 @@ class Result extends StatelessWidget {
   Result(this.resultScore, this.resetHandler);
   @override
   Widget build(BuildContext context) {
-    return AllConfetti(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              resultPhrase,
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            FlatButton(
-              onPressed: resetHandler,
-              child: Text('Restart Quiz'),
-              textColor: Colors.blue,
-            ),
-          ],
-        ),
+    Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            resultPhrase,
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          FlatButton(
+            onPressed: resetHandler,
+            child: Text('Restart Quiz'),
+            textColor: Colors.blue,
+          ),
+        ],
       ),
     );
   }
